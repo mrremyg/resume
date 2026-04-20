@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Remy Gagnon — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /><style>
+  /* ---- Page setup ---- */
+  @page {
+    size: Letter;
+    margin: 0.55in 0.6in 0.55in 0.6in;
+  }
+
+  /* ---- Palette (TherapyAppointment-inspired) ---- */
+  :root {
+    --blue-900: #0F2E7A;   /* deep rich blue — used in accents, name */
+    --blue-700: #1B4AD6;   /* primary rich blue */
+    --blue-500: #4A78E2;   /* mid accent */
+    --blue-300: #678fe4;   /* light accent */
+    --blue-100: #E6EEFB;   /* soft pastel blue — section backgrounds */
+    --blue-050: #F4F8FE;   /* barely-there wash */
+    --green-100: #DFF1E2;  /* soft pastel green — volunteer accent */
+    --green-700: #1f691d;
+    --green-500: #1baa22;
+    --green-100: #b5e7bd;  /* soft pastel green — volunteer accent */
+    --yellow-50: #FFFDF5; /* soft pastel yellow — skills accent */
+    --yellow-100: #fff2c7; /* mid accent */
+    --yellow-500: #ddb822; /* mustardy yellow — skills card border */
+    --yellow-700: #9e7f19;
+    --ink-900: #1A2340;    /* primary text */
+    --ink-700: #3A4566;    /* body text */
+    --ink-500: #6A7490;    /* muted */
+    --rule:    #D9E2F3;
+    --white:   #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 10.25pt;
+    line-height: 1.45;
+    color: var(--ink-700);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- Header ---- */
+  .header {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: var(--white);
+    border-radius: 14px;
+    padding: 22px 28px;
+    margin-bottom: 18px;
+    border: var(--blue-100) 2px solid;
+  }
+
+  @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  .header .name {
+    font-size: 28pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+    margin: 0 0 4px 0;
+  }
+
+  .header .title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.3px;
+  }
+
+  .header .contact {
+    font-size: 9.5pt;
+    color: #E6EEFB;
+    margin: 0;
+  }
+
+  .header .contact .dot {
+    display: inline-block;
+    margin: 0 8px;
+    color: #89A9EC;
+  }
+
+  .header .contact a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+  }
+
+  /* ---- Section heading ---- */
+  .section {
+    margin-top: 14px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .section {
+    page-break-inside: auto;
+  }
+
+  .section-heading .pill {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--blue-700);
+  }
+  
+  .pill-green {
+    background: var(--green-700);
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 3px;
+  }
+
+  .pill-yellow {
+    background: var(--yellow-500);
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 3px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue-900);
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .section-heading .rule {
+    flex: 1;
+    height: 2px;
+    background: var(--blue-100);
+    border-radius: 2px;
+  }
+
+  /* ---- Summary card ---- */
+  .summary-card {
+    background: var(--blue-050);
+    border: 1px solid var(--blue-500);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: var(--ink-900);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 3rem;
+  }
+
+  /* ---- Job entry ---- */
+  .entry {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--blue-500);
+    border-radius: 1rem;
+    background: var(--white);
+    page-break-inside: avoid;
+  }
+
+  .entry-last {
+    margin-bottom: 3rem;
+  }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 2px;
+  }
+
+  .entry-head .company {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blue-900);
+    margin: 0;
+  }
+
+  .entry-head .location {
+    font-size: 1.25rem;
+    color: var(--blue-700);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  .non-profit-website {
+    font-size: 9pt;
+    color: var(--green-700);
+    white-space: nowrap;
+    font-weight: 500;
+    border-radius: 3rem;
+    border: 1px solid var(--green-500);
+    background-color: var(--green-100);
+    padding: .5rem 1rem;
+  }
+  .non-profit-website a {
+    color: var(--green-700);
+  }
+
+
+  .entry-sub {
+    font-size: 9.5pt;
+    color: var(--ink-500);
+    font-style: italic;
+    margin: 0 0 2rem 0;
+  }
+
+  .role {
+    margin-top: 1rem;
+  }
+
+  .role-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    margin: 3rem 0 1rem 0;
+  }
+
+  .role-head .title {
+    font-size: 10.25pt;
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+
+  .role-head .dates {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--blue-700);
+    background: var(--blue-100);
+    padding: 2px 8px;
+    border-radius: 3rem;
+    white-space: nowrap;
+    border: 1px solid var(--blue-500);
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+  }
+
+  ul.bullets li {
+    position: relative;
+    padding: 1px 0 1px 16px;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--ink-700);
+  }
+
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: var(--blue-500);
+    border-radius: 50%;
+  }
+
+  /* ---- Volunteer entry variant (pastel green accent) ---- */
+  .entry.volunteer {
+    border-color: var(--green-100);
+    background: #FBFEFC;
+  }
+
+  .entry.volunteer .entry-head .company {
+    color: #1F5A3A;
+  }
+
+  .entry.volunteer .role-head .dates {
+    background: var(--green-100);
+    color: var(--green-700);
+  }
+
+  .entry.volunteer ul.bullets li::before {
+    background: #4FA872;
+  }
+
+  .entry.volunteer .entry-sub a,
+  .entry.volunteer .entry-sub {
+    color: var(--green-700);
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* ---- Skills ---- */
+  .skills-card {
+    background: var(--yellow-100);
+    border: 1px solid #F3E3A6;
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+
+  .skills-card .skills-list {
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #5A4708;
+    margin: 1rem;
+  }
+
+  .skills-card .skills-list .sep {
+    color: #B89433;
+    margin: 0 6px;
+  }
+
+  .skill {
+    display: inline-block;
+    background: var(--yellow-50);
+    color: var(--yellow-700);
+    border-radius: 3rem;
+    padding: .5px 1rem;
+    border: 1px solid var(--yellow-700);
+    margin: .25rem;
+  }
+
+  .h2skills {
+    color: var(--yellow-500) !important;
+  }
+
+  .h2-green {
+    color: var(--green-700) !important;
+  }
+
+  .rule-skills {
+    flex: 1;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--yellow-500) !important;
+  }
+
+ .rule-volunteer {
+    flex: 1;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--green-500) !important;
+  }
+
+  /* ---- Utility ---- */
+  .muted { color: var(--ink-500); }
+  a { color: var(--blue-700); text-decoration: none; }
+
+  /* Keep role blocks from splitting awkwardly */
+  .role { page-break-inside: avoid; }
+
+</style>
+</head>
+<body>
+
+<!-- Universal margins to make things nice and pretty -->
+<div style="margin: 2rem; max-width: 1000px; display: grid; place-content: center; border: 3px solid var(--blue-100); border-radius: 1.5rem; padding: 2rem;">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="d-flex flex-column justify-content-center w-100 h-100">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="name">Remy Gagnon</div>
+      <div class="title">Technical Writer &amp; Front end Developer</div>
+      <div class="contact">
+        <span class="material-symbols-outlined" style="font-size: 3rem; vertical-align: bottom;">
+          altitude
+        </span>
+
+        <span style="font-size: 1.25rem !important;">Asheville, NC</span>
+
+        <span class="dot">·</span>
+        
+        <span class="material-symbols-outlined" style="vertical-align: middle;">
+          account_circle
+        </span>
+        <a href="https://www.linkedin.com/in/remy-gagnon/">
+          linkedin.com/in/remy-gagnon
+        </a>
+
+        <span class="dot">·</span>
+
+        
+        <span class="material-symbols-outlined" style="vertical-align: middle;">
+          mail
+        </span>
+
+        <a href="mailto:mrremy@gmail.com">mrremy@gmail.com</a>
+        
+        <span class="dot">·</span>
+
+        <span class="material-symbols-outlined" style="vertical-align: middle;">
+          phone
+        </span>
+
+        <a href="tel:123-456-7890">(828) 200 - 0433</a>
+      </div>
+      </div></div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="pill"></span>
+      <h2>Summary</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="summary-card">
+      Technical writer and front end web developer for our marketing website. Documenting software people actually enjoy using. Currently at TherapyAppointment, where I write the public-facing documentation that helps therapists, psychiatrists, and group practices get the most out of their HIPAA-aligned secure EMR (Electronic Medical Records) software.<br><br>
+      I make our main web page and software documentation look sharp and professional but warm. Clear breakdowns of complex processes help users navigate the software with confidence. Getting quality work done quickly is the goal. Get in, handle medical appointments and everything in between and get on with your life.
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="pill"></span>
+      <h2>Professional Experience</h2>
+      <span class="rule"></span>
+    </div>
+
+    <!-- TherapyAppointment -->
+    <div class="entry">
+      <div class="entry-head">
+        <div class="company">TherapyAppointment</div>
+        <div class="location">Greater Asheville, NC</div>
+      </div>
+      <div class="role">
+        <div class="role-head">
+          <div class="title">Software Documentation &amp; Technical Support Specialist</div>
+          <div class="dates">May 2018 – Present · 8 yrs</div>
+        </div>
+        <ul class="bullets">
+          <li>Author and maintain public-facing documentation for a HIPAA-aware practice management EMR used by thousands of mental health providers, from solo therapists to large group practices.</li>
+          <li>Translate complex workflows — billing and insurance claims, scheduling, telehealth, ePrescribe — into clear, friendly, task-oriented guides that reduce support volume.</li>
+          <li>Design and polish customer-facing web pages so help content feels as considered as the product itself.</li>
+          <li>Provide technical support across browser, network, and application layers; triage and escalate issues in partnership with product and engineering.</li>
+          <li>Collaborate on release notes, feature rollouts, and new-user onboarding content so customers land ready to succeed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- First at Blue Ridge -->
+    <div class="entry">
+      <div class="entry-head">
+        <div class="company">First at Blue Ridge, Inc.</div>
+        <div class="location">Black Mountain, NC</div>
+      </div>
+      <div class="entry-sub">501(c)(3) nonprofit · Two roles over 1 yr 10 mos</div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="title">IT System Administrator</div>
+          <div class="dates">Apr 2017 – May 2018</div>
+        </div>
+        <ul class="bullets">
+          <li>Owned end-to-end IT operations: desktops and laptops, networking, on-site servers, email server, enterprise firewall, and the organization's website.</li>
+          <li>Administered WordPress, DNS, email deliverability, and domain records so day-to-day communications kept flowing.</li>
+          <li>Provided front-line support for staff while maintaining reliability and security posture across the organization.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="title">Medical Technician</div>
+          <div class="dates">Aug 2016 – Mar 2017</div>
+        </div>
+        <ul class="bullets">
+          <li>Kept the organization compliant with State of North Carolina and Veterans Affairs requirements for client self-administered medications.</li>
+          <li>Maintained regulatory paperwork and medication records aligned with physicians' orders, including proper documentation and sign-off.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Parks Computers -->
+    <div class="entry">
+      <div class="entry-head">
+        <div class="company">Parks Computers</div>
+        <div class="location">Asheville, NC</div>
+      </div>
+      <div class="role">
+        <div class="role-head">
+          <div class="title">Computer Repair Technician</div>
+          <div class="dates">May 2016 – Jun 2016</div>
+        </div>
+        <ul class="bullets">
+          <li>Diagnosed and repaired hardware and software issues on Macs and PCs.</li>
+          <li>Consulted with clients on needs and performed hardware- and software-level data recovery.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TenPlus Systems -->
+    <div class="entry">
+      <div class="entry-head">
+        <div class="company">TenPlus Systems</div>
+        <div class="location">Raleigh-Durham, NC</div>
+      </div>
+      <div class="role">
+        <div class="role-head">
+          <div class="title">Apple Certified Mac Technician</div>
+          <div class="dates">Aug 2013 – Feb 2014</div>
+        </div>
+        <ul class="bullets">
+          <li>Hardware, software, and on-site repair at a premium Apple Authorized Service Provider.</li>
+          <li>Performed data recovery using both hardware and software techniques.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Apple via Xerox -->
+    <div class="entry entry-last">
+      <div class="entry-head">
+        <div class="company">Apple (via Xerox)</div>
+        <div class="location">Raleigh, NC</div>
+      </div>
+      <div class="entry-sub">Two roles over 1 yr 10 mos</div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="title">AppleCare CPU Senior Advisor (Supervisor)</div>
+          <div class="dates">May 2012 – Aug 2013</div>
+        </div>
+        <ul class="bullets">
+          <li>Handled escalated AppleCare cases requiring in-depth troubleshooting, multiple callbacks, and creative resolution.</li>
+          <li>Empowered by Apple to make managerial decisions on repairs, replacements, and recovery of dissatisfied customer relationships.</li>
+          <li>Partnered with Apple Site Support Engineering on OS and hardware issues beyond standard troubleshooting paths.</li>
+          <li>Tracked emerging issue patterns and surfaced trends to Apple Engineering to inform future software and hardware releases.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="title">AppleCare CPU Advisor</div>
+          <div class="dates">Nov 2011 – May 2012</div>
+        </div>
+        <ul class="bullets">
+          <li>First-level phone support for AppleCare, troubleshooting software and hardware issues and resolving the majority of customer cases on first contact.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOLUNTEER -->
+  <div class="section">
+    <div style="page-break-inside: avoid;">
+      <div class="section-heading">
+        <span class="pill-green"></span>
+        <h2 class="h2-green">Volunteer Experience</h2>
+        <span class="rule-volunteer"></span>
+      </div>
+
+      <div class="entry volunteer">
+        <div class="entry-head">
+          <div class="company">Webmaster — Asheville YPAA (WNCCYPAA)</div>
+          <div class="non-profit-website"><a href="https://www.avlypaa.com">avlypaa.com</a></div>
+        </div>
+        <div class="entry-sub">Western North Carolina Committee of Young People in AA</div>
+        <ul class="bullets">
+          <li>Build and maintain the website for a volunteer-led committee that bridges AA and treatment centers in the Asheville area.</li>
+          <li>Publish and update annual campout registration, FAQs, and event programs (e.g., the WNCCYPAA Campout at Kuykendall Campground, Brevard, NC).</li>
+          <li>Keep event calendars, sign-up flows, and downloadable resources current for members and referral partners.</li>
+          <li>Collaborate with committee members on content, branding, and outreach to young people in recovery.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry volunteer entry-last">
+      <div class="entry-head">
+        <div class="company">Webmaster — Asheville 12 Step Recovery Club</div>
+        <div class="non-profit-website"><a href="https://www.avl12.com">avl12.com</a></div>
+      </div>
+      <div class="entry-sub">501(c)(3) nonprofit clubhouse hosting multiple recovery organizations</div>
+      <ul class="bullets">
+        <li>Maintain the web presence for a nonprofit clubhouse that hosts multiple recovery organizations in Asheville.</li>
+        <li>Publish the meeting schedule, including a daily 7am Sunrise AA virtual meeting accessible by phone or computer.</li>
+        <li>Keep by-laws, news, donation links (7th tradition), and subscribable calendar feeds current for members across devices.</li>
+        <li>Support the club's mission of providing a safe, reliable meeting space for people in recovery.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div style="page-break-inside: avoid;">
+      <div class="section-heading">
+        <span class="pill-yellow"></span>
+        <h2 class="h2skills">Skills</h2>
+        <span class="rule-skills"></span>
+      </div>
+      <div class="skills-card">
+        <div class="skills-list">
+          <div class="skill">Technical Writing &amp; Documentation</div>
+          <div class="skill">SaaS Support</div>
+          <div class="skill">WordPress</div>
+          <div class="skill">HTML / CSS</div>
+          <div class="skill">IT Systems Administration</div>
+          <div class="skill">Apple Hardware &amp; macOS</div>
+          <div class="skill">Windows & PC</div>
+          <div class="skill">Networking</div>
+          <div class="skill">DNS &amp; Email Administration</div>
+          <div class="skill">Data Recovery</div>
+          <div class="skill">Customer Escalations</div>
+          <div class="skill">HIPAA-aware Workflows</div>
+          <div class="skill">Content &amp; Information Architecture</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
